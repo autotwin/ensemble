@@ -140,10 +140,9 @@ Hope this helps to clarify our current process.  It would be great to explore ot
 
 Best,
 Rika
-
 ```
-
 
 ### Slicer
 
-The RMU manual workflow user [Slicer](https://www.slicer.org).
+* The RMU manual workflow user [Slicer](https://www.slicer.org).
+* [RMU workflow](https://docs.google.com/document/d/1_AkVtCFgTakGihnByPyMeO1eAVWoLZ3XTU2a3a_VO9s/edit?usp=sharing)
