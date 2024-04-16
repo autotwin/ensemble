@@ -123,6 +123,52 @@ https://segment-anything.com/
 
 To come.
 
+## Workflow
+
+Run the test suite to assure the virtual environment and module work:
+
+```bash
+(.venv)  (main) chovey@mac/Users/chovey/autotwin/ensemble> pytest -v
+================================================== test session starts ==================================================
+platform darwin -- Python 3.10.11, pytest-8.1.1, pluggy-1.4.0 -- /Users/chovey/autotwin/ensemble/.venv/bin/python3.10
+cachedir: .pytest_cache
+rootdir: /Users/chovey/autotwin/ensemble
+configfile: pyproject.toml
+plugins: cov-5.0.0
+collected 2 items                                                                                                       
+
+tests/test_hello.py::test_hello PASSED                                  [ 50%]
+tests/test_hello.py::test_adios PASSED                                  [100%]
+```
+
+Review the command line interface (CLI):
+
+```bash
+-----------------
+autotwin.ensemble
+-----------------
+
+ensemble
+    (this command)
+
+process <pathfile>.yml
+    Process the .yml input file.
+    Example:
+        process tests/files/getting_started.yml # TODO
+
+pytest
+    Runs the test suite (non-verbose option).
+
+pytest -v
+    Runs the test suite (verbose option).
+
+validate <pathfile>.yml # TODO
+    Validate the .yml input file against the module's schema.
+
+version
+    Prints the semantic version of the current installation.
+```
+
 ## References
 
 ### 2024-03-25-0903

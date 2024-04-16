@@ -50,6 +50,10 @@ dependencies = [
 # cubit_inp_to_quality_csv="atmesh.cubit_inp_to_quality_csv:main"
 # sculpt_stl_to_inp="atmesh.sculpt_stl_to_inp:main"
 
+[project.scripts]
+ensemble="ensemble.command_line:ensemble"
+version="ensemble.command_line:module_version"
+
 [project.urls]
 "Homepage" = "https://github.com/autotwin/ensemble"
 "Bug Tracker" = "https://github.com/autotwin/ensemble/issues"
