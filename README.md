@@ -100,8 +100,13 @@ pip install -e .  # install in dev mode, with the editable flag
 
 ### Freesurfer
 
+We use FreeSurfer version 7.4.1.
+
 Install [Freesurfer](https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall).
-For example, the [macOS installation](https://surfer.nmr.mgh.harvard.edu/fswiki//FS7_mac), and use the GUI Package install option.
+
+* [Downloads](https://surfer.nmr.mgh.harvard.edu/fswiki/rel7downloads) for installation.
+
+For example, the [macOS installation](https://surfer.nmr.mgh.harvard.edu/fswiki//FS7_mac), and use the GUI Package install option
 
 Use the [SynthStrip](https://surfer.nmr.mgh.harvard.edu/docs/synthstrip/) functionality within Freesurfer.
 
