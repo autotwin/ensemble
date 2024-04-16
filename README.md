@@ -122,6 +122,41 @@ Reference: https://segment-anything.com/
 
 * [Assessment 2024-04-16](https://docs.google.com/document/d/1A5qQjNUQzTSburgUGZ3_Sk3jI4C2BvM3zpVnVZeXiZA/edit)
 
+From the [FreeSurfer install page](https://surfer.nmr.mgh.harvard.edu/fswiki//FS7_mac):
+
+> *Example of placing the Mac tar archive under the system location /Applications by user "tester" using sudo/root privileges. Setup commands follow. Shell is bash or Bourne shell.*
+
+```bash
+$ cd $HOME
+$ pwd
+/home/tester
+$ sudo tar -C /Applications -zxvpf freesurfer-darwin-macOS-7.1.1.tar.gz
+x freesurfer/
+x freesurfer/ASegStatsLUT.txt
+x freesurfer/average/
+x freesurfer/bin/
+x freesurfer/build-stamp.txt
+x freesurfer/DefectLUT.txt
+...
+..
+<rest of output deleted>
+
+$ export FREESURFER_HOME=/Applications/freesurfer
+$ export SUBJECTS_DIR=$FREESURFER_HOME/subjects
+$ source $FREESURFER_HOME/SetUpFreeSurfer.sh
+-------- freesurfer-darwin-macOS-7.1.1 --------
+Setting up environment for FreeSurfer/FS-FAST (and FSL)
+FREESURFER_HOME   /Applications/freesurfer
+FSFAST_HOME       /Applications/freesurfer/fsfast
+FSF_OUTPUT_FORMAT nii.gz
+SUBJECTS_DIR      /Applications/freesurfer/subjects
+MNI_DIR           /home/tester/freesurfer/mni
+
+$ which freeview
+/Applications/freeview/bin/freeview
+```
+
+
 ## Workflow
 
 Run the test suite to assure the virtual environment and module work:
