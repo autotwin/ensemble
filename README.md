@@ -65,7 +65,7 @@ Note: If `.venv` already exists from previous installs, then remove it as follow
 ```bash
 (.venv) $ deactivate            # deactivate if the virtual environment is currently active
 $ pip uninstall .venv           # uninstall
-$ rm -rf ~/autotwin/mesh/.venv  # remove the virtual environment folder with `rm -rf .venv/`.
+$ rm -rf ~/autotwin/ensemble/.venv  # remove the virtual environment folder with `rm -rf .venv/`.
 ```
 
 Update `pip` and `setuptools`:
