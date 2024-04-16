@@ -101,6 +101,7 @@ pip install -e .  # install in dev mode, with the editable flag
 ### Freesurfer
 
 Install [Freesurfer](https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall).
+For example, the [macOS installation](https://surfer.nmr.mgh.harvard.edu/fswiki//FS7_mac).
 
 Use the [SynthStrip](https://surfer.nmr.mgh.harvard.edu/docs/synthstrip/) functionality within Freesurfer.
 
@@ -115,13 +116,11 @@ Use the Brain Extraction Tool ([Bet](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/BET/
 FSL: /usr/local/fsl/bin/bet  [input file] [output file] -f 0.3 -m -B -A
 ```
 
-### Segment Anything Model (SAM)
+### Segment Anything Model (SAM) and MedSAM
 
-https://segment-anything.com/
+Reference: https://segment-anything.com/
 
-### MedSAM
-
-To come.
+* [Assessment 2024-04-16](https://docs.google.com/document/d/1A5qQjNUQzTSburgUGZ3_Sk3jI4C2BvM3zpVnVZeXiZA/edit)
 
 ## Workflow
 
