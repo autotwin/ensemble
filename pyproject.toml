@@ -1,0 +1,55 @@
+# reference
+# https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+# PEP621
+# https://peps.python.org/pep-0621/
+#
+# Python Packages
+# https://py-pkgs.org/welcome
+
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ensemble"
+version = "0.0.1"
+authors = [
+  { name="Rika Carlsen", email="carlsen@rmu.edu" },
+  { name="Chad Hovey", email="chovey@sandia.gov" },
+  { name="Emma Lejeune", email="elejeune@bu.edu" },
+]
+description = "autotwin workflow, ensemble functionality"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "black==22.6.0",
+    "flake8",
+    "matplotlib",
+    "nibabel",
+    "numpy",
+    "pytest",
+    "pytest-cov",
+    "pyyaml",
+    "scikit-image==0.19.3",
+    "scipy",
+]
+
+# Entry Points
+# https://setuptools.pypa.io/en/latest/userguide/entry_point.html
+# [project.scripts]
+# atmesh="atmesh.command_line:atmesh"
+# atmeshinfo="atmesh.command_line:atmeshinfo"
+# version="atmesh.command_line:version"
+# cubit_inp_to_quality_csv="atmesh.cubit_inp_to_quality_csv:main"
+# sculpt_stl_to_inp="atmesh.sculpt_stl_to_inp:main"
+
+[project.urls]
+"Homepage" = "https://github.com/autotwin/ensemble"
+"Bug Tracker" = "https://github.com/autotwin/ensemble/issues"
