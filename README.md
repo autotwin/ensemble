@@ -110,11 +110,20 @@ For example, the [macOS installation](https://surfer.nmr.mgh.harvard.edu/fswiki/
 
 Use the [SynthStrip](https://surfer.nmr.mgh.harvard.edu/docs/synthstrip/) functionality within Freesurfer.
 
+* Processed `IXI012-HH-1211-T1.nii` and
+* `T1_Utah_SCI.nii`
+* on the synthstrip website, e.g., `mri_synthstrip -i input.nii.gz -o stripped.nii.gz`
+* Use SynthStrip, the command to remove the skull from the 
+
 ### FSL
 
 Install [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation).
 
 Use the Brain Extraction Tool ([Bet](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/BET/UserGuide)).
+
+```bash
+/Users/emma/fsl/bin/bet /Users/emma/fsl/IMAGE/T1_Utah_SCI /Users/emma/fsl/IMAGE/T1_Utah_SCI_brain  -f 0.5 -g 0
+```
 
 ```bash
 # RMU workflow
