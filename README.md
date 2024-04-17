@@ -100,20 +100,26 @@ pip install -e .  # install in dev mode, with the editable flag
 
 ### Freesurfer
 
-We use FreeSurfer version 7.4.1.
 
-Install [Freesurfer](https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall).
+Install [Freesurfer](https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall).  We use Freesurfer version 7.4.1, released June 2023.
 
-* [Downloads](https://surfer.nmr.mgh.harvard.edu/fswiki/rel7downloads) for installation.
+* [Downloads](https://surfer.nmr.mgh.harvard.edu/fswiki/rel7downloads) for installation.  For example, the [macOS installation](https://surfer.nmr.mgh.harvard.edu/fswiki//FS7_mac) with the GUI Package install option, `freesurfer-macOS-darwin_x86_64-7.4.1.pkg` 6.6 GB, MD5: `e050d9a939cb1c969ff0f0d12c5d2749`.
+* [Introduction to Freesurfer Output](https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/OutputData_freeview)
 
-For example, the [macOS installation](https://surfer.nmr.mgh.harvard.edu/fswiki//FS7_mac), and use the GUI Package install option
+#### recon-all
+
+* Get `aseg.mgz`(has the segmentation data we care about), is the last step in recon-all (command that runs 31 sequential analyses).
+* https://surfer.nmr.mgh.harvard.edu/fswiki/SubcorticalSegmentation
+  * *"In automatic subcortical segmentation, each voxel in the normalized brain volume is assigned one of about 40 labels, including: Cerebral White Matter, Cerebral Cortex, Lateral Ventricle, Inferior Lateral Ventricle, Cerebellum White Matter, Cerebellum Cortex, Thalamus, Caudate, Putamen, Pallidum, Hippocampus, Amygdala, Lesion, Accumbens area, Vessel, Third Ventricle, Fourth Ventricle, Brain Stem, Cerebrospinal Fluid."*
+* https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all
+
+#### synthstrip
 
 Use the [SynthStrip](https://surfer.nmr.mgh.harvard.edu/docs/synthstrip/) functionality within Freesurfer.
 
-* Processed `IXI012-HH-1211-T1.nii` and
-* `T1_Utah_SCI.nii`
+* Use SynthStrip, the command to remove the skull from the input scan.
 * on the synthstrip website, e.g., `mri_synthstrip -i input.nii.gz -o stripped.nii.gz`
-* Use SynthStrip, the command to remove the skull from the 
+* Processed `IXI012-HH-1211-T1.nii` and `T1_Utah_SCI.nii`.
 
 ### FSL
 
