@@ -60,7 +60,7 @@ source .venv/bin/activate.fish  # for fish shell
 .\.venv\Scripts/activate        # for powershell
 ```
 
-Note: If `.venv` already exists from previous installs, then remove it as follows:
+Note: If `.venv` already exists from previous installs, then remove it:
 
 ```bash
 (.venv) $ deactivate            # deactivate if the virtual environment is currently active
