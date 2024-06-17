@@ -112,16 +112,24 @@ Install [Freesurfer](https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstal
 * https://surfer.nmr.mgh.harvard.edu/fswiki/SubcorticalSegmentation
   * *"In automatic subcortical segmentation, each voxel in the normalized brain volume is assigned one of about 40 labels, including: Cerebral White Matter, Cerebral Cortex, Lateral Ventricle, Inferior Lateral Ventricle, Cerebellum White Matter, Cerebellum Cortex, Thalamus, Caudate, Putamen, Pallidum, Hippocampus, Amygdala, Lesion, Accumbens area, Vessel, Third Ventricle, Fourth Ventricle, Brain Stem, Cerebrospinal Fluid."*
 * https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all
+* to date, SynthSeg is used in favor of recon-all.
 
 #### SynthStrip
 
 Use the [SynthStrip](https://surfer.nmr.mgh.harvard.edu/docs/synthstrip/) functionality within Freesurfer.
 
 * Use SynthStrip, the command to remove the skull from the input scan.
-* on the synthstrip website, e.g., `mri_synthstrip -i input.nii.gz -o stripped.nii.gz`
-* Processed `IXI012-HH-1211-T1.nii` and `T1_Utah_SCI.nii`.
+* on the synthstrip website, e.g., `mri_synthstrip --i input.nii.gz --o stripped.nii.gz --no-csf`
+* Processed 122 examples from the IXI dataset.
 
-### SynthSeg
+#### SynthSeg
+
+Use the [SynthSeg](https://surfer.nmr.mgh.harvard.edu/fswiki/SynthSeg) functionality within Freesurfer.
+
+* Use SynthSeg, the command to recapitulate recon-all directly from the input scan with a neural network.
+* on the synthseg website, e.g., `mri_synthseg --i input.nii.gz --o segmented.nii.gz`
+* note that we cound indicies `[2, 3, 7, 8, 10, 11, 12, 13, 16, 17, 18, 26, 28, 41, 42, 46, 47, 49, 50, 51, 52, 53, 54, 58, 60]` as brain
+* Processed 122 examples from the IXI dataset.
 
 
 ### FSL
@@ -131,19 +139,56 @@ Install [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation).
 Use the Brain Extraction Tool ([Bet](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/BET/UserGuide)).
 
 ```bash
-/Users/emma/fsl/bin/bet /Users/emma/fsl/IMAGE/T1_Utah_SCI /Users/emma/fsl/IMAGE/T1_Utah_SCI_brain  -f 0.5 -g 0
-```
-
-```bash
 # RMU workflow
 FSL: /usr/local/fsl/bin/bet  [input file] [output file] -f 0.3 -m -B -A
 ```
+
+Use the FMRIB's Automated Segmentation Tool ([FAST](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FAST)).
+
+* Run FAST after performing skull stripping with either SynthStrip or FSL BET, e.g., `fast -t 1 -n 3 -H 0.1 -I 4 -l 20.0 -o input_name output_name`
+* Processed 122 examples from the IXI dataset.
+
 
 ### Segment Anything Model (SAM) and MedSAM
 
 Reference: https://segment-anything.com/
 
 * [Assessment 2024-04-16](https://docs.google.com/document/d/1A5qQjNUQzTSburgUGZ3_Sk3jI4C2BvM3zpVnVZeXiZA/edit)
+
+
+## BU SCC - running segmentation software
+
+Modules:
+```bash
+module load freesurfer/7.4.1
+module load fsl/6.0.7.8
+```
+
+Input file: `input_MRI.nii`
+
+Output files:
+* SynthStrip without CSF:
+```bash
+mri_synthstrip -i input_MRI.nii -m input_MRI_synthsrip_mask.nii --no-csf
+```
+relevant output file: `input_MRI_synthsrip_mask.nii`
+* SynthStrip + FAST:
+```bash
+mri_synthstrip -i input_MRI.nii -o input_MRI_synthstrip_brain.nii
+
+fast -t 1 -n 3 -H 0.1 -I 4 -l 20.0 -o IXI012-HH-1211-T1_synthstrip_brain IXI012-HH-1211-T1_synthsrip_brain
+```
+relevant output file:
+* BET + FAST:
+```bash
+
+```
+* SynthSeg:
+```bash
+
+```
+
+122 examples from the IXI dataset have been run with this workflow.
 
 ## Workflow
 
