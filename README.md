@@ -113,13 +113,16 @@ Install [Freesurfer](https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstal
   * *"In automatic subcortical segmentation, each voxel in the normalized brain volume is assigned one of about 40 labels, including: Cerebral White Matter, Cerebral Cortex, Lateral Ventricle, Inferior Lateral Ventricle, Cerebellum White Matter, Cerebellum Cortex, Thalamus, Caudate, Putamen, Pallidum, Hippocampus, Amygdala, Lesion, Accumbens area, Vessel, Third Ventricle, Fourth Ventricle, Brain Stem, Cerebrospinal Fluid."*
 * https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all
 
-#### synthstrip
+#### SynthStrip
 
 Use the [SynthStrip](https://surfer.nmr.mgh.harvard.edu/docs/synthstrip/) functionality within Freesurfer.
 
 * Use SynthStrip, the command to remove the skull from the input scan.
 * on the synthstrip website, e.g., `mri_synthstrip -i input.nii.gz -o stripped.nii.gz`
 * Processed `IXI012-HH-1211-T1.nii` and `T1_Utah_SCI.nii`.
+
+### SynthSeg
+
 
 ### FSL
 
