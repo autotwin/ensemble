@@ -51,7 +51,7 @@ We use a [virtual environment](https://realpython.com/python-virtual-environment
 With in the `autotwin/ensemble` directory, create a virtual environment:
 
 ```bash
-python -m venv .venv # with python and the venv module, create a virtual environment called .venv
+python3.10 -m venv .venv # with python and the venv module, create a virtual environment called .venv
 
 # activate the virtual environment with one of the following:
 source .venv/bin/activate       # for bash shell
@@ -96,6 +96,12 @@ Install the module as a developer:
 
 ```bash
 pip install -e .  # install in dev mode, with the editable flag
+```
+
+Run pytest:
+
+```bash
+pytest -v --cov=ensemble  --cov-report term-missing
 ```
 
 ### Freesurfer
