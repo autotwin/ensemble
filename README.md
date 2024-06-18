@@ -98,12 +98,6 @@ Install the module as a developer:
 pip install -e .  # install in dev mode, with the editable flag
 ```
 
-Run pytest:
-
-```bash
-pytest -v --cov=ensemble  --cov-report term-missing
-```
-
 ### Freesurfer
 
 
@@ -182,17 +176,21 @@ relevant output file: `input_MRI_synthsrip_mask.nii`
 ```bash
 mri_synthstrip -i input_MRI.nii -o input_MRI_synthstrip_brain.nii
 
-fast -t 1 -n 3 -H 0.1 -I 4 -l 20.0 -o IXI012-HH-1211-T1_synthstrip_brain IXI012-HH-1211-T1_synthsrip_brain
+fast -t 1 -n 3 -H 0.1 -I 4 -l 20.0 -o input_MRI_synthstrip_brain input_MRI_synthstrip_brain
 ```
-relevant output file:
+relevant output file: `input_MRI_synthsrip_brain_seg.nii.gz`
 * BET + FAST:
 ```bash
+bet input_MRI input_MRI_bet_brain -f 0.5 -g 0
 
+fast -t 1 -n 3 -H 0.1 -I 4 -l 20.0 -o input_MRI_bet_brain input_MRI_bet_brain
 ```
+relevant output file: `input_MRI_bet_brain_seg.nii.gz`
 * SynthSeg:
 ```bash
-
+mri_synthseg --i input_MRI.nii --o input_MRI_mri_synthseg.nii
 ```
+relevant output file: `input_MRI_mri_synthseg.nii`
 
 122 examples from the IXI dataset have been run with this workflow.
 
