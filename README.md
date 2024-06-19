@@ -1,5 +1,7 @@
 # ensemble
 
+[![python](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/)
+
 ## Getting Started
 
 ## Configuration
