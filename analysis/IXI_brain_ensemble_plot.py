@@ -29,7 +29,7 @@ mask_list_ensemble = np.load(str(analysis_path) + "/mask_list_ensemble.npy")
 # plot the individiual masks
 for ix in range(0, 10):
     slice = 100
-    fix, ax = plt.subplots(1, 6, figsize=(12, 2))
+    fig, ax = plt.subplots(1, 6, figsize=(12, 2))
     ax[0].imshow(np.flip(mask_list_bet_fsl[ix][slice, :, :], axis=0))
     ax[0].set_title("fsl-1")
     ax[1].imshow(np.flip(mask_list_ss_fsl[ix][slice, :, :], axis=0))
@@ -82,3 +82,16 @@ for with_ensemble in [True, False]:
     else:
         plt.savefig(str(analysis_path) + "/histogram_brain_volume")
 
+
+# plot one example suitable for visualizing the whole thing
+ix = 2
+for slice in range(0, mask_list_sum[ix].shape[0]):
+    fig, ax = plt.subplots(1, 2, figsize=(6, 3))
+    ax[0].imshow(np.flip(mask_list_sum[ix][slice, :, :], axis=0), cmap=plt.cm.plasma)
+    ax[0].set_title("weighted sum")
+    ax[0].set_axis_off()
+    ax[1].imshow(np.flip(mask_list_ensemble[ix][slice, :, :], axis=0), cmap=plt.cm.binary)
+    ax[1].set_title("ensemble")
+    ax[1].set_axis_off()
+    plt.savefig(str(analysis_path) + "/anim_%i_%03d" % (ix, slice))
+    plt.close()
