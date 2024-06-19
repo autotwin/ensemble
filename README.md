@@ -258,7 +258,11 @@ version
 
 ## Preliminary Results - IXI dataset
 
+In the `analysis` folder we have one script for performaing the ensemble of results from the IXI dataset `IXI_brain_ensemble.py` and one script for plotting these results `IXI_brain_ensemble_plot.py`.
 
+<p align="center">
+  <img src="https://github.com/autotwin/ensemble/blob/main/analysis/histogram_brain_volume_ensemble.png" alt="histograms of brain volume"/>
+</p>
 
 ## References
 
