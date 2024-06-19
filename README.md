@@ -3,6 +3,10 @@
 [![python](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/)
 
 <p align="center">
+  <img src="https://github.com/autotwin/ensemble/blob/main/analysis/anim/anim.gif" alt="example ensemble 2, animated"/>
+</p>
+
+<p align="center">
   <img src="https://github.com/autotwin/ensemble/blob/main/analysis/visualize_example_0.png" alt="example ensemble 0"/>
   <img src="https://github.com/autotwin/ensemble/blob/main/analysis/visualize_example_1.png" alt="example ensemble 1"/>
   <img src="https://github.com/autotwin/ensemble/blob/main/analysis/visualize_example_2.png" alt="example ensemble 2"/>
