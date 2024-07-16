@@ -151,7 +151,6 @@ Use the [SynthSeg](https://surfer.nmr.mgh.harvard.edu/fswiki/SynthSeg) functiona
 * note that we cound indicies `[2, 3, 7, 8, 10, 11, 12, 13, 16, 17, 18, 26, 28, 41, 42, 46, 47, 49, 50, 51, 52, 53, 54, 58, 60]` as brain
 * Processed 122 examples from the IXI dataset.
 
-
 ### FSL
 
 Install [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation).
@@ -174,7 +173,6 @@ Use the FMRIB's Automated Segmentation Tool ([FAST](https://fsl.fmrib.ox.ac.uk/f
 Reference: https://segment-anything.com/
 
 * [Assessment 2024-04-16](https://docs.google.com/document/d/1A5qQjNUQzTSburgUGZ3_Sk3jI4C2BvM3zpVnVZeXiZA/edit)
-
 
 ## BU SCC - running segmentation software
 
@@ -269,23 +267,6 @@ In the `analysis` folder we have one script for performaing the ensemble of resu
 </p>
 
 ## References
-
-### 2024-03-25-0903
-
-```bash
-Hi Emma,
-
-Just a follow-up from the last meeting.  It turns out that our current workflow uses FSL to obtain the skull mask, which is the skull segmentation that we use in our head model.  The quality of the skull segmentation from this tool is not consistent, so it often requires some manual corrections afterwards using 3D Slicer.
-
-Here's an example command that we use in FSL: /usr/local/fsl/bin/bet  [input file] [output file] -f 0.3 -m -B -A
-
-The input file is the MRI file and the output is the skull mask. The thresholding parameter (0.3 above) varies from 0 to 1, and this value is often selected via trial and error (usually between 0.3 and 0.8) to obtain the best segmentation.  Before obtaining the skull mask, we also perform a bias field correction (using ANTS software) and Gibbs correction (using Mrtrix software) on the original MRI file.  More details about this can be found here.
-
-Hope this helps to clarify our current process.  It would be great to explore other tools that may produce an improved result for the skull segmentation.
-
-Best,
-Rika
-```
 
 ### Slicer
 
