@@ -1,6 +1,6 @@
 # ensemble
 
-[![python](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/)
+[![python](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)
 
 <p align="center">
   <img src="https://github.com/autotwin/ensemble/blob/main/analysis/anim/anim.gif" alt="example ensemble 2, animated"/>
