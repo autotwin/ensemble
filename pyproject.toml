@@ -13,7 +13,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ensemble"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="Rika Carlsen", email="carlsen@rmu.edu" },
   { name="Chad Hovey", email="chovey@sandia.gov" },
